@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple task manager that saves your tasks in your browser." />
+    <title>My To-Do List | Week 7</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="./">My Tasks</a>
+        <button id="theme-toggle" class="button button-quiet" type="button" aria-label="Switch theme">🌙 Dark mode</button>
+      </div>
+    </header>
+    <main class="container">
+      <section class="intro">
+        <p class="eyebrow">WEEK 7 PROJECT</p>
+        <h1>Plan your day, one task at a time.</h1>
+        <p>Your tasks are saved automatically in this browser.</p>
+      </section>
+      <section class="todo-panel" aria-labelledby="todo-heading">
+        <h2 id="todo-heading">My To-Do List</h2>
+        <form id="todo-form" class="todo-form">
+          <label class="visually-hidden" for="todo-input">New task</label>
+          <input id="todo-input" name="todo" type="text" maxlength="120" placeholder="What do you need to do?" required />
+          <button class="button button-primary" type="submit">Add task</button>
+        </form>
+        <p id="form-message" class="message" role="status" aria-live="polite"></p>
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+          </div>
+          <span id="task-count" class="task-count">0 tasks left</span>
+        </div>
+        <ul id="todo-list" class="todo-list" aria-label="Tasks"></ul>
+        <p id="empty-state" class="empty-state">No tasks yet. Add your first task above.</p>
+        <div class="list-footer">
+          <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+          <button id="clear-all" class="text-button danger-text" type="button">Clear all</button>
+        </div>
+      </section>
+      <p class="privacy-note">Your task data stays in this browser using localStorage.</p>
+    </main>
+    <footer class="container footer"><p>Built with HTML, CSS and JavaScript.</p></footer>
+  </body>
+</html>
